@@ -75,7 +75,6 @@ Create Table ADMINISTRATEUR
 (
     dateDebut DATE,
     numAdministrateur Integer,
-    PRIMARY KEY (numAdministrateur),
     FOREIGN KEY (numAdministrateur) REFERENCES UTILISATEUR(numUtilisateur)
 );
 
@@ -112,7 +111,7 @@ Create Table CONCOURS
    FOREIGN KEY (numPresident) REFERENCES PRESIDENT(numPresident)
 );
 
-Create table ParticipeClub
+Create table PARTICIPE_CLUB
 (
   numClub Integer,
   numConcours Integer,
@@ -120,7 +119,7 @@ Create table ParticipeClub
   FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours)
 );
 
-Create table ParticipeCompetiteur
+Create table PARTICIPE_COMPETITEUR
 (
   numCompetiteur Integer,
   numConcours Integer,
