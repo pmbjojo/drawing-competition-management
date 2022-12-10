@@ -1,0 +1,22 @@
+---
+- name: "Install php"
+  ansible.builtin.apt:
+    name:
+      - php
+      - php-mysql
+      - php-xml
+      - php-mbstring
+      - php-gd
+      - php-intl
+      - php-curl
+      - php-xmlrpc
+      - php-soap
+      - php-json
+      - php-cli
+      - php-pear
+      - php-xsl
+      - php-zip
+      - libapache2-mod-php
+    state: present
+  changed_when: true
+  notify: Restart Apache

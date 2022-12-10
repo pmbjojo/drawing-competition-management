@@ -1,0 +1,15 @@
+---
+- name: "Create siteweb database"
+  community.mysql.mysql_db:
+    name: "{{ siteweb_db_name }}"
+    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    state: present
+
+- name: "Create siteweb user"
+  community.mysql.mysql_user:
+    name: "{{ siteweb_db_user }}"
+    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    host: "localhost"
+    password: "{{ siteweb_db_password }}"
+    priv: "{{ siteweb_db_name }}.*:ALL"
+    state: present

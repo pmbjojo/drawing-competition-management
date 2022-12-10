@@ -1,0 +1,11 @@
+---
+siteweb_db_name: "sitewebdb"
+siteweb_db_user: "sitewebuser"
+siteweb_db_password: "sitewebpassword"
+siteweb_port: "1956"
+siteweb_name: "siteweb"
+siteweb_directory: "/var/www/html/{{ siteweb_name }}"
+siteweb_user: "siteweb"
+siteweb_server_admin: "joshua.jourdam@reseau.eseo.fr"
+siteweb_error_log_file: "{{ siteweb_name }}-error.log"
+siteweb_access_log_file: "{{ siteweb_name }}-access.log"

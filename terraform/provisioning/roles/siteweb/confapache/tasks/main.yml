@@ -1,0 +1,66 @@
+---
+- name: Create siteweb user
+  ansible.builtin.user:
+    name: "{{ siteweb_user }}"
+    groups: www-data
+
+- name: Create siteweb directory
+  ansible.builtin.file:
+    path: "{{ siteweb_directory }}"
+    state: directory
+    mode: '0755'
+    recurse: true
+    owner: "www-data"
+    group: "www-data"
+
+- name: Enable php module
+  ansible.builtin.replace:
+    path: "/etc/php/7.4/apache2/php.ini"
+    regexp: "allow_url_include = Off"
+    replace: "allow_url_include = On"
+
+- name: Add apache2 listen port
+  ansible.builtin.lineinfile:
+    path: /etc/apache2/ports.conf
+    line: "Listen {{ siteweb_port }}"
+
+- name: Create siteweb virtualhost
+  ansible.builtin.copy:
+    remote_src: true
+    src: /etc/apache2/sites-available/000-default.conf
+    dest: /etc/apache2/sites-available/{{ siteweb_name }}.conf
+    mode: '0755'
+
+- name: Configure siteweb port
+  ansible.builtin.replace:
+    path: /etc/apache2/sites-available/siteweb.conf
+    regexp: "80"
+    replace: "{{ siteweb_port }}"
+
+- name: Configure siteweb DocumentRoot
+  ansible.builtin.replace:
+    path: /etc/apache2/sites-available/siteweb.conf
+    regexp: "DocumentRoot /var/www/html"
+    replace: "DocumentRoot {{ siteweb_directory }}"
+
+- name: Configure siteweb error log
+  ansible.builtin.replace:
+    path: /etc/apache2/sites-available/siteweb.conf
+    regexp: "error.log"
+    replace: "{{ siteweb_error_log_file }}"
+
+- name: Configure siteweb access log
+  ansible.builtin.replace:
+    path: /etc/apache2/sites-available/siteweb.conf
+    regexp: "access.log"
+    replace: "{{ siteweb_access_log_file }}"
+
+- name: Disable default site
+  ansible.builtin.command: a2dissite 000-default
+  notify: Restart apache2 sercice
+  changed_when: false
+
+- name: Enable siteweb site
+  ansible.builtin.command: a2ensite {{ siteweb_name }}
+  notify: Restart Apache
+  changed_when: false

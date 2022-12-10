@@ -1,0 +1,26 @@
+---
+- name: Install global packages
+  ansible.builtin.apt:
+    name:
+      - git
+      - wget
+      - gnupg
+      - unzip
+    state: present
+    update_cache: true
+
+- name: Add contrib and non-free repositories
+  ansible.builtin.replace:
+    path: "/etc/apt/sources.list"
+    regexp: 'main'
+    replace: 'main contrib non-free'
+
+- name: Configure eseo proxy
+  ansible.builtin.shell: |
+    echo "#Acquire::http::Proxy \"http://scully.eseo.fr:9999\";" >> /etc/apt/apt.conf
+  changed_when: false
+
+- name: Set keymap fr
+  ansible.builtin.shell: |
+    /usr/bin/localectl set-keymap fr
+  changed_when: false
