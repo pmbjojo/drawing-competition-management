@@ -126,3 +126,32 @@ Create table PARTICIPE_COMPETITEUR
   FOREIGN KEY (numCompetiteur) REFERENCES COMPETITEUR(numCompetiteur),
   FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours)
 );
+
+Create table JURY;
+(
+FOREIGN KEY (numConcours)
+FOREIGN KEY (numEvaluateur)  
+
+);
+
+Create table EVALUATION;
+(
+    FOREIGN KEY (numDessin),
+    PRIMARY KEY numEvaluateur,
+    dateEvaluation, 
+    note, 
+    commentaire
+);
+
+Create table DESSIN;
+(
+    PRIMARY KEY (numDessin
+    commentaire VARCHAR(40) NOT NULL, 
+    classement Integer, 
+    dateRemise DATE NOT NULL, 
+    leDessin, 
+    FOREIGN KEY (numConcours), 
+    FOREIGN KEY (numCompetiteur)  
+
+);
+
