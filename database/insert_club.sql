@@ -1,3 +1,5 @@
+-- Tout club qui participe à un concours donné doit mobiliser au moins 6 compétiteurs
+-- et 3 évaluateurs.
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (1, 'Vipe', '2 Dayton Street', '6841651466', 23, 'Ciherang', 'Messerschmidt', '65');
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (2, 'Gabtype', '108 Sunnyside Terrace', '1672386209', 71, 'Obesi', 'American Ash', '165');
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (3, 'Pixope', '88724 Messerschmidt Way', '6302067275', 16, 'Sidi Lamine', 'Browning', '0165');
@@ -98,3 +100,4 @@ insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, vill
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (98, 'Dynabox', '4 Mendota Court', '1025316539', 14, 'Panggungasri', 'Pond', '81');
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (99, 'Aimbo', '93 Truax Circle', '4497332751', 4, 'Huadian', 'Westridge', '68351');
 insert into CLUB (numClub, NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values (100, 'Kwideo', '595 Dixon Hill', '5307853894', 71, 'Muang Sam Sip', 'Kings', '02982');
+linux
