@@ -17,27 +17,27 @@ drop table if exists CLUB;
 /* Creation table Club */
 Create Table CLUB
 (    
-    numClub Integer NOT NULL auto_increment,
-    NomClub Varchar (40) NOT NULL,
-    adresse Varchar (40) NOT NULL,
+    numClub Integer auto_increment,
+    NomClub Varchar (40),
+    adresse Varchar (40),
     numTelephone CHAR(10),
-    nombreAdherents Integer NOT NULL,
-    ville Varchar (40) NOT NULL,
-    departement Varchar (40) NOT NULL,
-    region Varchar (40) NOT NULL,
+    nombreAdherents Integer,
+    ville Varchar (40),
+    departement Varchar (40),
+    region Varchar (40),
     PRIMARY KEY (numClub)
 );
 
 /* Creation table UTILISATEUR */
 Create Table UTILISATEUR
 (    
-    numUtilisateur Integer NOT NULL auto_increment,
-    nom Varchar(40) NOT NULL,
-    prenom Varchar(40) NOT NULL,
-    age Varchar(3) NOT NULL,
+    numUtilisateur Integer auto_increment,
+    nom Varchar(40),
+    prenom Varchar(40),
+    age Varchar(3),
     adresse Varchar(40),
-    login Varchar(20) NOT NULL,
-    motDePasse Varchar(40) NOT NULL,
+    login Varchar(20),
+    motDePasse Varchar(40),
     numClub Integer,
     PRIMARY KEY (numUtilisateur),
     FOREIGN KEY (numClub) REFERENCES CLUB(numClub)
@@ -46,7 +46,7 @@ Create Table UTILISATEUR
 /* Creation table PRESIDENT */
 Create Table PRESIDENT
 (
-    prime Integer NOT NULL,
+    prime Integer ,
     numPresident Integer,
     PRIMARY KEY (numPresident),
     FOREIGN KEY (numPresident) REFERENCES UTILISATEUR(numUtilisateur)
@@ -55,7 +55,7 @@ Create Table PRESIDENT
 /* Creation table EVALUATEUR */
 Create Table EVALUATEUR
 (
-    specialite Varchar (40) NOT NULL,
+    specialite Varchar (40),
     numEvaluateur Integer,
     PRIMARY KEY (numEvaluateur),
     FOREIGN KEY (numEvaluateur) REFERENCES UTILISATEUR(numUtilisateur)
@@ -75,6 +75,7 @@ Create Table ADMINISTRATEUR
 (
     dateDebut DATE,
     numAdministrateur Integer,
+    PRIMARY KEY (numAdministrateur),
     FOREIGN KEY (numAdministrateur) REFERENCES UTILISATEUR(numUtilisateur)
 );
 
@@ -100,17 +101,18 @@ Create Table DIRIGE
 /* Creation table CONCOURS */
 Create Table CONCOURS
 (
-   numConcours Integer NOT NULL auto_increment,
-   theme VARCHAR(40) NOT NULL,
-   descriptif TEXT NOT NULL,
-   dateDebut DATE NOT NULL,
-   dateFin DATE NOT NULL,
-   etat VARCHAR(40) NOT NULL,
+   numConcours Integer auto_increment,
+   theme VARCHAR(40),
+   descriptif TEXT,
+   dateDebut DATE,
+   dateFin DATE,
+   etat VARCHAR(40),
    numPresident Integer,
    PRIMARY KEY (numConcours),
    FOREIGN KEY (numPresident) REFERENCES PRESIDENT(numPresident)
 );
 
+/* Creation table PARTICIPE_CLUB */
 Create table PARTICIPE_CLUB
 (
   numClub Integer,
@@ -119,6 +121,7 @@ Create table PARTICIPE_CLUB
   FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours)
 );
 
+/* Creation table PARTICIPE_COMPETITEUR */
 Create table PARTICIPE_COMPETITEUR
 (
   numCompetiteur Integer,
@@ -127,31 +130,40 @@ Create table PARTICIPE_COMPETITEUR
   FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours)
 );
 
-Create table JURY;
+/* Creation table JURY */
+Create table JURY
 (
-FOREIGN KEY (numConcours)
-FOREIGN KEY (numEvaluateur)  
-
+    numConcours Integer,
+    numEvaluateur Integer,
+    PRIMARY KEY (numConcours,numEvaluateur),
+    FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours),
+    FOREIGN KEY (numEvaluateur) REFERENCES EVALUATEUR(numEvaluateur)
 );
 
-Create table EVALUATION;
+/* Creation table DESSIN */
+Create table DESSIN
 (
-    FOREIGN KEY (numDessin),
-    PRIMARY KEY numEvaluateur,
-    dateEvaluation, 
-    note, 
-    commentaire
+    numDessin Integer auto_increment,
+    commentaire VARCHAR(200),
+    classement Integer,
+    dateRemise DATE,
+    leDessin binary,
+    numConcours Integer,
+    numCompetiteur Integer,
+    PRIMARY KEY (numDessin),
+    FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours),
+    FOREIGN KEY (numCompetiteur) REFERENCES COMPETITEUR(numCompetiteur)
 );
 
-Create table DESSIN;
+/* Creation table EVALUATION */
+Create table EVALUATION
 (
-    PRIMARY KEY (numDessin
-    commentaire VARCHAR(40) NOT NULL, 
-    classement Integer, 
-    dateRemise DATE NOT NULL, 
-    leDessin, 
-    FOREIGN KEY (numConcours), 
-    FOREIGN KEY (numCompetiteur)  
-
+    numEvaluateur Integer,
+    numDessin Integer,
+    dateEvaluation DATE,
+    note Integer,
+    commentaire VARCHAR(200),
+    PRIMARY KEY (numEvaluateur, numDessin, dateEvaluation),
+    FOREIGN KEY (numDessin) REFERENCES DESSIN(numDessin),
+    FOREIGN KEY (numEvaluateur) REFERENCES UTILISATEUR(numUtilisateur)
 );
-
