@@ -1,0 +1,5 @@
+insert into CLUB (NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values ('Vipe', '2 Dayton Street', '6841651466', 23, 'Ciherang', 'Messerschmidt', '65');
+insert into CLUB (NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values ('Gabtype', '108 Sunnyside Terrace', '1672386209', 71, 'Obesi', 'American Ash', '165');
+insert into CLUB (NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values ('Pixope', '88724 Messerschmidt Way', '6302067275', 16, 'Sidi Lamine', 'Browning', '0165');
+insert into CLUB (NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values ('Eidel', '16465 Anzinger Trail', '1243083896', 86, 'Port Sudan', 'Fairfield', '3');
+insert into CLUB (NomClub, adresse, numTelephone, nombreAdherents, ville, departement, region) values ('Voonyx', '587 Weeping Birch Pass', '8532213174', 61, 'Mirkovci', 'Springview', '41');

@@ -1,2 +1,0 @@
--- Tout compétiteur ne peut pas déposer plus de trois dessins dans un même concours
--- donné

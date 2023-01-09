@@ -1,3 +1,0 @@
--- Un concours pour être organisé doit mobiliser au moins 2 régions et au moins 2 dé-
--- partements de chaque région. De plus, chaque département impliqué dans un con-
--- cours doit mobiliser au moins 2 clubs (de la même ville ou pas).

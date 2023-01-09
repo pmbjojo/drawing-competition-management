@@ -39,6 +39,7 @@ Create Table UTILISATEUR
     login Varchar(20),
     motDePasse Varchar(40),
     numClub Integer,
+    dateInscription DATE,
     PRIMARY KEY (numUtilisateur),
     FOREIGN KEY (numClub) REFERENCES CLUB(numClub)
 );
@@ -85,7 +86,7 @@ Create Table DIRECTEUR
     dateDebut DATE,
     numDirecteur Integer,
     PRIMARY KEY (numDirecteur),
-    FOREIGN KEY (numDirecteur) REFERENCES UTILISATEUR(numUTILISATEUR)
+    FOREIGN KEY (numDirecteur) REFERENCES UTILISATEUR(numUtilisateur)
 );
 
 /* Creation table DIRIGE */

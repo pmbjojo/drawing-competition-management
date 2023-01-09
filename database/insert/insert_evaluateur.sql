@@ -3,3 +3,4 @@
 -- même concours.
 
 -- Un évaluateur ne peut pas évaluer des dessins de son Club.
+-- Un dessin doit être évalué par deux évaluateurs qui constituent un Jury.
