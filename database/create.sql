@@ -91,10 +91,10 @@ Create Table DIRECTEUR
 /* Creation table DIRIGE */
 Create Table DIRIGE
 (
-    numCub Integer,
+    numClub Integer,
     numDirecteur Integer,
-    PRIMARY KEY (numCub ,numDirecteur),
-    FOREIGN KEY (numCub ) REFERENCES CLUB(numClub),
+    PRIMARY KEY (numClub ,numDirecteur),
+    FOREIGN KEY (numClub ) REFERENCES CLUB(numClub),
     FOREIGN KEY (numDirecteur) REFERENCES DIRECTEUR(numDirecteur)
 );
 
@@ -152,7 +152,7 @@ Create table EVALUATION
     numDessin Integer,
     dateEvaluation DATE,
     note Integer,
-    commentaire VARCHAR(200),
+    commentaire VARCHAR(300),
     PRIMARY KEY (numEvaluateur, numDessin, dateEvaluation),
     FOREIGN KEY (numDessin) REFERENCES DESSIN(numDessin),
     FOREIGN KEY (numEvaluateur) REFERENCES UTILISATEUR(numUtilisateur)
