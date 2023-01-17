@@ -1,4 +1,3 @@
-insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (20, '2011-09-29');
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (21, '2011-03-04');
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (22, '2015-05-01');
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (23, '2016-04-03');
@@ -73,3 +72,4 @@ insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (91, 
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (92, '2022-04-26');
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (93, '2022-02-14');
 insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (94, '2020-08-09');
+insert into COMPETITEUR (numCompetiteur, datePremiereParticipation) values (95, '2011-09-29');

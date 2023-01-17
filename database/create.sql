@@ -21,7 +21,6 @@ Create Table CLUB
     NomClub Varchar (40),
     adresse Varchar (40),
     numTelephone CHAR(10),
-    nombreAdherents Integer,
     ville Varchar (40),
     departement Varchar (40),
     region Varchar (40),
@@ -131,16 +130,6 @@ Create table PARTICIPE_COMPETITEUR
   FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours)
 );
 
-/* Creation table JURY */
-Create table JURY
-(
-    numConcours Integer,
-    numEvaluateur Integer,
-    PRIMARY KEY (numConcours,numEvaluateur),
-    FOREIGN KEY (numConcours) REFERENCES CONCOURS(numConcours),
-    FOREIGN KEY (numEvaluateur) REFERENCES EVALUATEUR(numEvaluateur)
-);
-
 /* Creation table DESSIN */
 Create table DESSIN
 (
@@ -148,7 +137,7 @@ Create table DESSIN
     commentaire VARCHAR(200),
     classement Integer,
     dateRemise DATE,
-    leDessin binary,
+    leDessin VARCHAR(100),
     numConcours Integer,
     numCompetiteur Integer,
     PRIMARY KEY (numDessin),
