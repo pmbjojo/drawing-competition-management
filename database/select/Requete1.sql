@@ -1,0 +1,16 @@
+SELECT 
+  UTILISATEUR.nom, 
+  UTILISATEUR.prenom, 
+  UTILISATEUR.adresse, 
+  UTILISATEUR.age, 
+  CLUB.nomClub, 
+  CLUB.departement, 
+  CLUB.region,
+  CONCOURS.descriptif,
+  CONCOURS.dateDebut,
+  CONCOURS.dateFin
+FROM 
+  COMPETITEUR, UTILISATEUR, PARTICIPE_COMPETITEUR, CONCOURS,CLUB
+WHERE 
+  YEAR(CONCOURS.dateDebut) = 2021 AND COMPETITEUR.numCompetiteur=UTILISATEUR.numUtilisateur AND COMPETITEUR.numCompetiteur = PARTICIPE_COMPETITEUR.numCompetiteur
+  AND PARTICIPE_COMPETITEUR.numConcours = CONCOURS.numConcours AND UTILISATEUR.numClub=CLUB.numClub;

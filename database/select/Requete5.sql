@@ -1,0 +1,13 @@
+SELECT 
+  CLUB.region, 
+  AVG(EVALUATION.note)
+FROM 
+  DESSIN, EVALUATION, COMPETITEUR, CLUB, UTILISATEUR
+  WHERE  DESSIN.numDessin = EVALUATION.numDessin
+  AND DESSIN.numCompetiteur = COMPETITEUR.numCompetiteur
+  AND UTILISATEUR.numClub = CLUB.numClub
+  AND COMPETITEUR.numCompetiteur=UTILISATEUR.numUtilisateur
+GROUP BY 
+  CLUB.region
+ORDER BY 
+ AVG(EVALUATION.note) DESC

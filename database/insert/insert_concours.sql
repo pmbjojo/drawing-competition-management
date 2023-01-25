@@ -5,7 +5,7 @@
 insert into CONCOURS (theme, descriptif, dateDebut, dateFin, etat, numPresident) values ('Masonry', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '2022-01-28', '2022-03-08', 'Pays de la Loire', 9);
 insert into CONCOURS (theme, descriptif, dateDebut, dateFin, etat, numPresident) values ('Drilled Shafts', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 
-Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2019-02-09', '2019-05-30', 'Bretagne', 10);
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2021-02-09', '2021-05-30', 'Bretagne', 10);
 insert into CONCOURS (theme, descriptif, dateDebut, dateFin, etat, numPresident) values ('Structural and Misc Steel (Fabrication)', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '2018-04-09', '2018-06-23', 'Poitou-Charentes', 13);
