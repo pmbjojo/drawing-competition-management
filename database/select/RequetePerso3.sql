@@ -1,0 +1,10 @@
+SELECT CLUB.nomClub, 
+    COUNT(DISTINCT UTILISATEUR.numUtilisateur) as nbMembres, 
+    AVG(EVALUATION.note) as moyenneNotes
+FROM CLUB, UTILISATEUR, COMPETITEUR, PARTICIPE_COMPETITEUR, DESSIN, EVALUATION
+WHERE CLUB.numClub = UTILISATEUR.numClub
+    AND UTILISATEUR.numUtilisateur = COMPETITEUR.numCompetiteur
+    AND COMPETITEUR.numCompetiteur = PARTICIPE_COMPETITEUR.numCompetiteur7
+    AND PARTICIPE_COMPETITEUR.numConcours = DESSIN.numConcours
+    AND DESSIN.numDessin = EVALUATION.numDessin
+GROUP BY CLUB.nomClub

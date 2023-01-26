@@ -1,0 +1,11 @@
+SELECT 
+    UTILISATEUR.nom,
+    UTILISATEUR.prenom,
+    EVALUATION.numEvaluateur,
+    COUNT(EVALUATION.numDessin),
+    AVG(EVALUATION.note)
+FROM 
+    EVALUATION, EVALUATEUR, UTILISATEUR
+WHERE  EVALUATION.numEvaluateur = EVALUATEUR.numEvaluateur AND EVALUATEUR.numEvaluateur=UTILISATEUR.numUtilisateur
+GROUP BY 
+    EVALUATEUR.numEvaluateur
