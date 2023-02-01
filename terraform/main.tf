@@ -99,9 +99,4 @@ resource "azurerm_linux_virtual_machine" "main" {
     storage_account_type = "Premium_LRS"
     caching              = "ReadWrite"
   }
-
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDT4IzZhLlhJAe4OW5ECleod9Q29CxVulDmZadiInOFavInlKO1l4Qrp6DJm79OIHyb4IkE/iNdH/QKu+2b/7qWQ+as3fjWSkYH7XS/IX03bcApbNZp20z4/sL+he9WARxzRVio0z5Zb862/RDmC5SkH/Ana1OXTiv223FfHFbX7DPB6mAaH6cbS7zr4dfiwrYSjbJzFCyI6/RTC6ItmbaTWin3u32xwtLnJV0BhKEvwYsnADxiwDqdgW2+wqMBOpS8uNIoCtXPTB+JplKYPcjxyEsvn+YbaPKDmbZgIJM7+eT1jcAVluU8q277SY8hdxxYfxhVYfNoxDDhfnwjbo01NgyHEPXi7dLirf5/UNsT8C1Uw/CzuKsbJvBTzbYyI1Te1Dig8XgNSOR7HxC9VWKLvGhTUgBmAn91drn/s3bffNTF9EaxK23DRy6iCxt3qN11a/v7IataTd9ZBwtWY6X0CfX2mPqFoixl/1rql0yzae8g/Ti1AdTl2Tu6iwN8BPs= pmbjojo@xps"
-  }
 }

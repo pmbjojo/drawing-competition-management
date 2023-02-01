@@ -1,0 +1,39 @@
+@import "background.css";
+
+h2{
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+input{
+    width: 20%;
+    height: 5%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#concours-section {
+    border-top: 3px solid #3498db;
+}
+
+#dessins-section {
+    border-top: 3px solid #2ecc71;
+}
+
+#region-moyenne-section {
+    border-top: 3px solid #e74c3c;
+}
+
+#moyenne-concours-section {
+    border-top: 3px solid yellow;
+}
+
+#moyenne-evaluateur-section {
+    border-top: 3px solid cyan;
+}

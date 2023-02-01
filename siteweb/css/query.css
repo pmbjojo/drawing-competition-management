@@ -1,0 +1,51 @@
+@import "background.css";
+
+.container{
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .table-scroll{
+    /*width:100%; */
+    margin-top: 1rem;
+    display: block;
+    empty-cells: show;
+    
+    border-spacing: 0;
+    border: 1px solid;
+  }
+  
+  .table {
+    display:table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse:collapse;
+  }
+
+  .row {
+    display: table-row;
+  }
+
+  .head{
+    background-color: white;
+    color: black;
+    position: sticky;
+    z-index: 100;
+  }
+  .cell.p0{
+    padding:0;
+    border:none
+  }
+  .cell {
+    display: table-cell;
+    padding: 5px;
+    border: 1px solid white;
+  }
+
+
+  .fixed{
+    position: sticky;
+    top: 3rem;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+  }
